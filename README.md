@@ -20,10 +20,29 @@ on the jenkins home page select `create new jobs` or `New Item` and create a fre
 ![jenkins job setup](./docs/images/new-jenkins-job.png)
 
 #### set the GitHub repository and branch
+configure the jenkins job to use the `spring-boot-hello-world` project on the `port-9000` branch
+![jenkins source code management](./docs/images/jenkins-source-code-management.png)
 
 #### set the job to build on changes to the branch
+configure poll SCM so that jenkins checks for a change on the `port-9000` branch every 1 minute
+![jenkins poll scm](./docs/images/jenkins-poll-scm.png)
 
 ### configure the build script
+under the build section click `Add build step > Execute shell` and enter the script below
+```bash
+# create the application jar file
+mvn clean package
+# copy the jar file to the spring user home
+sudo cp target/hello-world-0.0.1-SNAPSHOT.jar /home/spring/app.jar
+# make sure that the spring user owns the jar file
+sudo chown spring:spring /home/spring/app.jar
+# restart the spring service
+sudo systemctl restart spring
+```
+it should look something like this in the jenkins job configuration
+![jenkins execute shell](./docs/images/jenkins-execute-shell.png)
+
+
 
 
 
