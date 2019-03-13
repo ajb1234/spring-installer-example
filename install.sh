@@ -10,4 +10,5 @@ sudo apt install -y openjdk-8-jre openjdk-8-jdk git
 sudo apt install -y maven
 # install the service script
 sudo cp spring.service /etc/systemd/system/spring.service
-
+# reload all of the systemd service scripts
+sudo systemctl daemon-reload
