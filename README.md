@@ -9,8 +9,10 @@ cd spring-installer-example
 ```
 
 ### run the install scripts
-this will install jenkins and the spring service
-
+this will install jenkins and the spring service (you will sudo access for this)
+```bash
+bash install.sh
+```
 ### follow the jenkins setup
 jenkins can be accessed from port `8080`, follow the guided setup of jenkins, selecting the default options
 ![jenkins setup](./docs/images/jenkins-setup.png)
