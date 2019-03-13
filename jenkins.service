@@ -1,0 +1,10 @@
+[Unit]
+Description=Jenkins Automation Server
+
+[Service]
+User=jenkins
+WorkingDirectory=/home/jenkins
+ExecStart=/usr/bin/java -jar /home/jenkins/jenkins.war
+
+[Install]
+WantedBy=multi-user.target
