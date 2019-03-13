@@ -42,7 +42,9 @@ sudo systemctl restart spring
 it should look something like this in the jenkins job configuration
 ![jenkins execute shell](./docs/images/jenkins-execute-shell.png)
 
-
+### save the job configuration
+click the `Save` button at the bottom of the screen  
+whenever a change is made to the `port-9000` branch now the jenkins job will execute
 
 
 
