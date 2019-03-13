@@ -17,7 +17,7 @@ if ! sudo cat /etc/sudoers | grep jenkins; then
 	echo 'jenkins ALL=(ALL:ALL) NOPASSWD:ALL' | sudo EDITOR='tee -a' visudo
 fi
 # download the latest jenkins.war to the jenkins home folder
-sudo wget https://updates.jenkins-ci.org/latest/jenkins.war -o /home/jenkins/jenkins.war
+sudo wget https://updates.jenkins-ci.org/latest/jenkins.war -O /home/jenkins/jenkins.war
 # make sure jenkins owns the jenkins.war file
 sudo chown jenkins:jenkins /home/jenkins/jenkins.war
 # install the jenkins service script
